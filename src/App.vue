@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <layout-index />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+  import '@/style/overrides.sass'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LayoutIndex: () => import(
+        '@/layouts/LayoutIndex'
+    ),
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="css">
+  tbody tr:nth-of-type(odd) {
+    background-color: #ffffff;
+  }
+  tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  th {
+    background-color: #f2f5f8 !important;
+    color: black !important;
+  }
+  html {
+    overflow-y: auto !important;
+  }
 </style>
